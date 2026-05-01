@@ -57,9 +57,9 @@ export default function About() {
     <section
       id="about"
       style={{ background: "linear-gradient(180deg, #05101f, #070f20)" }}
-      className="py-24"
+      className="relative z-10 py-32"
     >
-      <div className="max-w-6xl mx-auto px-6" ref={ref}>
+      <div className="relative z-20 max-w-6xl mx-auto px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

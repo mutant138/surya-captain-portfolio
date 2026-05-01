@@ -71,34 +71,35 @@ export default function Experience() {
     <section
       id="experience"
       style={{ background: "linear-gradient(180deg, #05101f, #040d1a)" }}
-      className="py-24"
+      className="relative z-10 py-32"
     >
-      <div className="max-w-5xl mx-auto px-6" ref={ref}>
+      <div className="relative z-20 max-w-6xl mx-auto px-6" ref={ref}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <div
-            className="font-mono-tech text-xs mb-3"
-            style={{ color: "#B22234", letterSpacing: "0.3em" }}
+            className="font-mono-tech text-xs mb-4"
+            style={{ color: "#ef5350", letterSpacing: "0.4em" }}
           >
             ◆ FIELD RECORD ◆
           </div>
           <h2
-            className="font-bebas text-6xl mb-4 glow-red"
-            style={{ color: "#B22234", letterSpacing: "0.05em" }}
+            className="font-bebas text-6xl md:text-7xl mb-6 glow-red"
+            style={{ color: "#B22234", letterSpacing: "0.1em" }}
           >
             OPS HISTORY
           </h2>
-          <div className="divider-shield w-48 mx-auto" />
+          <div className="divider-shield w-56 mx-auto" />
         </motion.div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Center line */}
+          {/* Center line (hidden on small screens) */}
           <div
+            className="hidden md:block"
             style={{
               position: "absolute",
               left: "50%",
@@ -108,6 +109,7 @@ export default function Experience() {
               background:
                 "linear-gradient(180deg, #4fc3f7, #B22234, #c9a84c, #8fa8c8)",
               transform: "translateX(-50%)",
+              opacity: 0.3,
             }}
           />
 
@@ -116,28 +118,30 @@ export default function Experience() {
             return (
               <motion.div
                 key={exp.company}
-                initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.7, delay: i * 0.2 }}
-                className={`relative flex items-start mb-12 ${isLeft ? "flex-row" : "flex-row-reverse"}`}
+                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                className={`relative flex flex-col md:flex-row items-center mb-16 md:mb-24 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
               >
-                {/* Card */}
-                <div
-                  className={`w-5/12 ${isLeft ? "pr-8 text-right" : "pl-8 text-left"}`}
-                >
+                {/* Card Container */}
+                <div className="w-full md:w-[45%]">
                   <motion.div
-                    className="glass-panel rounded-xl p-5 shield-card"
+                    className="glass-panel rounded-2xl p-6 md:p-8 shield-card"
                     whileHover={{ scale: 1.02 }}
-                    style={{ borderColor: `${exp.color}30` }}
+                    style={{
+                      borderLeft: `4px solid ${exp.color}`,
+                      background: "rgba(5, 16, 31, 0.7)",
+                    }}
                   >
                     {/* Badge */}
                     <div
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full mb-3 font-mono-tech text-xs`}
+                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4 font-mono-tech text-xs"
                       style={{
-                        background: `${exp.color}18`,
-                        border: `1px solid ${exp.color}40`,
+                        background: `${exp.color}15`,
+                        border: `1px solid ${exp.color}30`,
                         color: exp.color,
-                        letterSpacing: "0.1em",
+                        letterSpacing: "0.15em",
                       }}
                     >
                       {exp.type === "CURRENT" && (
@@ -147,9 +151,8 @@ export default function Experience() {
                             height: 6,
                             background: exp.color,
                             borderRadius: "50%",
-                            display: "inline-block",
                           }}
-                          animate={{ scale: [1, 1.5, 1], opacity: [1, 0.4, 1] }}
+                          animate={{ scale: [1, 1.6, 1], opacity: [1, 0.5, 1] }}
                           transition={{ duration: 1.5, repeat: Infinity }}
                         />
                       )}
@@ -157,83 +160,68 @@ export default function Experience() {
                     </div>
 
                     <h3
-                      className="font-bebas text-xl mb-1"
+                      className="font-bebas text-2xl md:text-3xl mb-1"
                       style={{ color: exp.color, letterSpacing: "0.05em" }}
                     >
                       {exp.role}
                     </h3>
                     <div
-                      className="font-orbitron font-bold text-xs mb-1"
-                      style={{ color: "#c8d8e8" }}
+                      className="font-orbitron font-bold text-sm mb-2"
+                      style={{ color: "#4fc3f7" }}
                     >
                       {exp.company}
                     </div>
                     <div
-                      className="font-mono-tech text-xs mb-3"
+                      className="font-mono-tech text-xs mb-6 opacity-70"
                       style={{ color: "#8fa8c8" }}
                     >
                       {exp.period} · {exp.location}
                     </div>
 
-                    <ul
-                      className={`space-y-1.5 ${isLeft ? "text-right" : "text-left"}`}
-                    >
+                    <ul className="space-y-3">
                       {exp.bullets.map((b, bi) => (
                         <li
                           key={bi}
-                          className="font-rajdhani text-sm"
-                          style={{ color: "#8fa8c8" }}
+                          className="font-rajdhani text-base leading-relaxed flex gap-3"
+                          style={{ color: "#c8d8e8" }}
                         >
-                          <span style={{ color: exp.color }}>{"▸ "}</span>
-                          {b}
+                          <span
+                            className="mt-1.5 shrink-0"
+                            style={{ color: exp.color }}
+                          >
+                            {"▸ "}
+                          </span>
+                          <span>{b}</span>
                         </li>
                       ))}
                     </ul>
                   </motion.div>
                 </div>
 
-                {/* Center node */}
-                <div
-                  style={{
-                    position: "absolute",
-                    left: "50%",
-                    top: 20,
-                    transform: "translateX(-50%)",
-                    zIndex: 10,
-                  }}
-                >
+                {/* Center Node */}
+                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center z-10">
                   <motion.div
                     style={{
-                      width: 48,
-                      height: 48,
+                      width: 54,
+                      height: 54,
                       borderRadius: "50%",
-                      background: `radial-gradient(circle, ${exp.color}30, #05101f)`,
+                      background: "#05101f",
                       border: `2px solid ${exp.color}`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontSize: 20,
-                      boxShadow: `0 0 20px ${exp.color}50`,
+                      fontSize: 22,
+                      boxShadow: `0 0 20px ${exp.color}40`,
                     }}
-                    animate={{
-                      boxShadow: [
-                        `0 0 10px ${exp.color}30`,
-                        `0 0 25px ${exp.color}70`,
-                        `0 0 10px ${exp.color}30`,
-                      ],
-                    }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Infinity,
-                      delay: i * 0.5,
-                    }}
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    viewport={{ once: true }}
                   >
                     {exp.icon}
                   </motion.div>
                 </div>
 
-                {/* Spacer */}
-                <div className="w-5/12" />
+                {/* Spacer for alternating layout */}
+                <div className="hidden md:block md:w-[45%]" />
               </motion.div>
             );
           })}

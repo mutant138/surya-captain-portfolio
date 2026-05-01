@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <CustomCursor />
       <Navbar />
-      <main className="flex flex-col">
+      <main className="relative">
         <Hero />
         <Skills />
         <Experience />

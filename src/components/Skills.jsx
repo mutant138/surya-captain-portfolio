@@ -117,12 +117,12 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-32 hex-bg"
+      className="relative z-10 py-32 hex-bg"
       style={{
-        background: "linear-gradient(180deg, #05101f, #07142a, #05101f)",
+        background: "#071a30",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6" ref={ref}>
+      <div className="relative z-20 max-w-6xl mx-auto px-6" ref={ref}>
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

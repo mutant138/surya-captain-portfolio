@@ -122,9 +122,9 @@ export default function Projects() {
     <section
       id="projects"
       style={{ background: "linear-gradient(180deg, #040d1a, #05101f)" }}
-      className="py-24 hex-bg"
+      className="relative z-10 py-32 hex-bg"
     >
-      <div className="max-w-7xl mx-auto px-6" ref={ref}>
+      <div className="relative z-20 max-w-6xl mx-auto px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

@@ -54,7 +54,7 @@ export default function Contact() {
     <section
       id="contact"
       style={{ background: "linear-gradient(180deg, #070f20, #03090f)" }}
-      className="py-24 hex-bg relative overflow-hidden"
+      className="relative z-10 py-32 hex-bg overflow-hidden"
     >
       {/* Background shield */}
       <div
@@ -70,7 +70,7 @@ export default function Contact() {
         <Shield size={600} animate={false} />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10" ref={ref}>
+      <div className="relative z-20 max-w-6xl mx-auto px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
