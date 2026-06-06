@@ -114,10 +114,10 @@ function StarField() {
 
 export default function Hero() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.85]);
+  // const { scrollYProgress } = useScroll({ target: ref });
+  // const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  // const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.85]);
 
   const stats = [
     { label: "Years Exp", value: "3+" },
@@ -139,7 +139,7 @@ export default function Hero() {
       <StarField />
 
       {/* Big background shield rings */}
-      <motion.div
+      {/* <motion.div
         style={{
           position: "absolute",
           right: "-10%",
@@ -160,7 +160,7 @@ export default function Hero() {
               "inset 0 0 0 50px #B22234, inset 0 0 0 100px #8fa8c8, inset 0 0 0 150px #B22234",
           }}
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* Scanline effect */}
       <motion.div
@@ -178,10 +178,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <motion.div
-        style={{ y, opacity, scale }}
-        className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 w-full"
-      >
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 w-full">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] items-center gap-24 lg:gap-40">
           {/* Left: Text */}
           <div className="flex-1 max-w-2xl">
@@ -396,7 +393,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Shield */}
+          {/* Right: Shield + centered ring */}
           <motion.div
             initial={{ opacity: 0, scale: 0.3, rotate: -180 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -406,59 +403,45 @@ export default function Hero() {
               type: "spring",
               stiffness: 80,
             }}
-            className="relative shrink-0"
+            className="relative shrink-0 flex items-center justify-center"
+            style={{ width: 360, height: 360 }}
           >
+            {/* Ring — now centered on the shield */}
+            <motion.div
+              style={{
+                position: "absolute",
+                inset: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                opacity: 0.15,
+              }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+            >
+              <div
+                style={{
+                  width: 700,
+                  height: 700,
+                  borderRadius: "50%",
+                  border: "60px solid #003366",
+                  boxShadow:
+                    "inset 0 0 0 50px #B22234, inset 0 0 0 100px #8fa8c8, inset 0 0 0 150px #B22234",
+                }}
+              />
+            </motion.div>
+
+            {/* Shield float */}
             <motion.div
               animate={{ y: [-8, 8, -8] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              style={{ position: "relative", zIndex: 1 }}
             >
               <Shield size={320} />
             </motion.div>
-
-            {/* Floating tech chips around shield */}
-            {[
-              { label: "Solidity", angle: 0, r: 180 },
-              { label: "Next.js", angle: 60, r: 190 },
-              { label: "MongoDB", angle: 120, r: 175 },
-              { label: "AWS", angle: 180, r: 185 },
-              { label: "React", angle: 240, r: 175 },
-              { label: "Node.js", angle: 300, r: 185 },
-            ].map((chip, i) => {
-              const rad = (chip.angle * Math.PI) / 180;
-              const x = Math.cos(rad) * chip.r;
-              const y = Math.sin(rad) * chip.r;
-              return (
-                <motion.div
-                  key={chip.label}
-                  style={{
-                    position: "absolute",
-                    left: "50%",
-                    top: "50%",
-                    transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%))`,
-                  }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2 + i * 0.1, type: "spring" }}
-                  whileHover={{ scale: 1.15 }}
-                >
-                  <div
-                    className="font-mono-tech text-xs px-2.5 py-1 rounded whitespace-nowrap"
-                    style={{
-                      background: "rgba(0,15,40,0.85)",
-                      border: "1px solid rgba(79,195,247,0.25)",
-                      color: "#4fc3f7",
-                      boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
-                      letterSpacing: "0.1em",
-                    }}
-                  >
-                    {chip.label}
-                  </div>
-                </motion.div>
-              );
-            })}
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Scroll indicator */}
       <motion.div
