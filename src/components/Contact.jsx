@@ -36,7 +36,7 @@ export default function Contact() {
       label: "Location",
       value: "Madurai, Tamil Nadu, India",
       action: () =>
-        window.open("https://maps.app.goo.gl/K8dC4iJ5a1xR4yJbA", "_blank"),
+        window.open("https://maps.app.goo.gl/CFsgTY7UPCjnJtUw7", "_blank"),
       actionLabel: "MAPS",
       color: "#B22234",
     },
