@@ -231,7 +231,7 @@ export default function Contact() {
             </span>
           </div>
           <p className="font-mono-tech text-xs" style={{ color: "#8fa8c8" }}>
-            © 2025 · Built with Next.js · Framer Motion · Tailwind CSS
+            © 2025 · Built with Confidence · Hardwork · Success
           </p>
           <p
             className="font-mono-tech text-xs mt-1"
