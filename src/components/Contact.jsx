@@ -35,16 +35,17 @@ export default function Contact() {
       icon: "📍",
       label: "Location",
       value: "Madurai, Tamil Nadu, India",
-      action: undefined,
+      action: () =>
+        window.open("https://maps.app.goo.gl/K8dC4iJ5a1xR4yJbA", "_blank"),
       actionLabel: null,
       color: "#B22234",
     },
     {
       icon: "💼",
       label: "LinkedIn",
-      value: "linkedin.com/in/udhayasuryau",
+      value: "linkedin.com/in/udhaya-suryau",
       action: () =>
-        window.open("https://www.linkedin.com/in/udhayasuryau", "_blank"),
+        window.open("https://www.linkedin.com/in/udhaya-suryau", "_blank"),
       actionLabel: "VISIT",
       color: "#8fa8c8",
     },
