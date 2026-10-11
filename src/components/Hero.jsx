@@ -5,10 +5,10 @@ import Shield from "./Shield";
 
 const typewriterTexts = [
   "Full-Stack Developer",
-  "Web3 Engineer",
-  "DeFi Builder",
-  "AI/LLM Architect",
-  "MERN Stack Expert",
+  "Web3 & AI Engineer",
+  "DeFi & DEX Architect",
+  "AI Agent & RAG Builder",
+  "MERN & Next.js Expert",
 ];
 
 function Typewriter() {
@@ -252,9 +252,9 @@ export default function Hero() {
               className="font-rajdhani text-lg leading-relaxed mb-10"
               style={{ color: "#8fa8c8", maxWidth: 550 }}
             >
-              Building decentralized applications, scalable MERN systems, and
-              AI-powered platforms. From DeFi protocols to LLM integrations — I
-              ship production-ready code that performs at 99.9% uptime.
+              Full-stack developer with experience in MERN stack, Next.js, FastAPI,
+              and cloud technologies. Architecting high-performance DeFi protocols,
+              autonomous AI agent pipelines, and web applications delivering 99.9% uptime.
             </motion.p>
 
             {/* Stats row */}
@@ -345,7 +345,7 @@ export default function Hero() {
               </motion.a>
 
               <motion.a
-                href="https://space-themed-portolio.vercel.app/"
+                href="https://otaku-frontend-2026.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
                 className="font-orbitron font-bold px-7 py-3.5 rounded text-sm"
@@ -362,7 +362,7 @@ export default function Hero() {
                 }}
                 whileTap={{ scale: 0.97 }}
               >
-                OLD SITE ↗
+                OTAKU MATCH ↗
               </motion.a>
             </motion.div>
 
@@ -406,30 +406,65 @@ export default function Hero() {
             className="relative shrink-0 flex items-center justify-center"
             style={{ width: 360, height: 360 }}
           >
-            {/* Ring — now centered on the shield */}
+            {/* Ambient circular vibranium glow */}
+            <div
+              style={{
+                position: "absolute",
+                width: 560,
+                height: 560,
+                minWidth: 560,
+                minHeight: 560,
+                borderRadius: "50%",
+                background:
+                  "radial-gradient(circle, rgba(79,195,247,0.22) 0%, rgba(178,34,52,0.14) 40%, rgba(0,32,74,0.08) 60%, transparent 75%)",
+                filter: "blur(24px)",
+                pointerEvents: "none",
+              }}
+            />
+
+            {/* Concentric Shield Watermark Ring (True Circle, No Distortion) */}
             <motion.div
               style={{
                 position: "absolute",
-                inset: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                opacity: 0.15,
+                width: 520,
+                height: 520,
+                minWidth: 520,
+                minHeight: 520,
+                flexShrink: 0,
+                borderRadius: "50%",
+                pointerEvents: "none",
+                opacity: 0.22,
               }}
               animate={{ rotate: 360 }}
               transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
             >
               <div
                 style={{
-                  width: 700,
-                  height: 700,
+                  width: "100%",
+                  height: "100%",
                   borderRadius: "50%",
-                  border: "60px solid #003366",
+                  border: "32px solid #003366",
                   boxShadow:
-                    "inset 0 0 0 50px #B22234, inset 0 0 0 100px #8fa8c8, inset 0 0 0 150px #B22234",
+                    "0 0 40px rgba(79,195,247,0.25), inset 0 0 0 28px #B22234, inset 0 0 0 56px #8fa8c8, inset 0 0 0 84px #B22234",
                 }}
               />
             </motion.div>
+
+            {/* Futuristic HUD Orbit Ring */}
+            <motion.div
+              style={{
+                position: "absolute",
+                width: 440,
+                height: 440,
+                minWidth: 440,
+                minHeight: 440,
+                borderRadius: "50%",
+                border: "1.5px dashed rgba(79,195,247,0.35)",
+                pointerEvents: "none",
+              }}
+              animate={{ rotate: -360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            />
 
             {/* Shield float */}
             <motion.div

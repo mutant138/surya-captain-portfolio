@@ -4,15 +4,63 @@ import { useRef, useState } from "react";
 
 const projects = [
   {
+    title: "Otaku Match",
+    category: "Founder & Lead · AI Matchmaking",
+    type: "AI PROJECT",
+    color: "#a78bfa",
+    icon: "🤖",
+    description:
+      "AI-powered matchmaking platform for gamers and anime enthusiasts. Architected stack with Next.js, Node.js, and MongoDB schemas categorizing 500+ titles across FPS, RPG, and MOBA genres for AI-driven compatibility scoring.",
+    tech: ["Next.js", "Node.js", "MongoDB", "AI/ML", "SSR"],
+    highlights: ["Founder & Lead", "500+ Titles Categorized", "FPS/RPG/MOBA"],
+    link: "https://otaku-frontend-2026.vercel.app/",
+  },
+  {
+    title: "Arthaveda Learning",
+    category: "SEO & High-Perf SPA",
+    type: "LIVE SITE",
+    color: "#34d399",
+    icon: "📈",
+    description:
+      "High-performance SPA landing page for Arthaveda. Reduced load time by 30%, mobile-first design, structured SEO metadata, and automated AWS/Vercel CI/CD pipelines with 99.9% uptime.",
+    tech: ["Next.js", "React.js", "AWS", "Vercel", "SEO", "CI/CD"],
+    highlights: ["-30% load time", "Structured SEO", "99.9% uptime"],
+    link: "https://www.arthavedalearning.com",
+  },
+  {
+    title: "Bitcoin World AI Pipeline",
+    category: "AI Content Automation",
+    type: "AI PROJECT",
+    color: "#f59e0b",
+    icon: "⚡",
+    description:
+      "Autonomous AI content automation pipeline featuring RSS ingestion, multi-agent editorial and SEO curation workflows, and automated publishing system for crypto news media.",
+    tech: ["Python", "FastAPI", "AI Agents", "RSS Ingestion", "SEO Automation"],
+    highlights: ["Multi-Agent Pipeline", "Auto-Publishing", "Crypto Media"],
+    link: "https://bitcoinworld.co.in/",
+  },
+  {
+    title: "Racing 8888 (HKJC Scraper)",
+    category: "Real-Time Betting & Data",
+    type: "WEB3",
+    color: "#ef4444",
+    icon: "🏇",
+    description:
+      "High-throughput HKJC data scraper powering a real-time horse-racing betting platform with automated on-chain reward distribution and real-time live odds.",
+    tech: ["Node.js", "Smart Contracts", "Web Scraping", "WebSockets", "MongoDB"],
+    highlights: ["Real-time Odds", "Automated Rewards", "High-Throughput"],
+    link: "#",
+  },
+  {
     title: "eQuity DeFi & HODL",
-    category: "DeFi Protocol",
+    category: "DeFi Protocols & DEX",
     type: "WEB3",
     color: "#4fc3f7",
     icon: "⟠",
     description:
-      "High-performance Decentralized Exchange and DeFi protocol enabling secure peer-to-peer asset trading with advanced liquidity mechanisms.",
-    tech: ["Solidity", "React", "Node.js", "Web3.js", "MetaMask", "MERN"],
-    highlights: ["DEX architecture", "Liquidity pools", "Smart contracts"],
+      "High-performance DEX and DeFi protocols enabling secure peer-to-peer asset trading. Built real-time event listeners and a multi-RPC failover system cutting client costs by 30%.",
+    tech: ["Solidity", "Multi-RPC Failover", "React", "Node.js", "Web3.js", "MetaMask"],
+    highlights: ["-30% RPC costs", "DEX architecture", "Multi-RPC"],
     link: "#",
   },
   {
@@ -22,70 +70,34 @@ const projects = [
     color: "#c9a84c",
     icon: "🎮",
     description:
-      "Blockchain-based gaming platforms with real-time interactions, secure on-chain asset management, and provably fair game mechanics.",
+      "Blockchain-based gaming platforms with real-time multiplayer interactions, secure on-chain asset management, and provably fair game mechanics.",
     tech: ["Solidity", "React", "Node.js", "Web3", "MongoDB"],
     highlights: ["On-chain assets", "Real-time play", "Fair mechanics"],
     link: "#",
   },
   {
     title: "Rise Platform",
-    category: "Wellness App",
+    category: "Mindful Sounds & Meditation",
     type: "FULL-STACK",
     color: "#B22234",
     icon: "🧘",
     description:
-      "Mindful sounds & meditation platform with admin/user dashboards, improving load times by 20% and increasing user engagement by 30%.",
+      "Mindful sounds & Sunya Talks meditation platform with user/provider/admin dashboards, improving load times by 20%, API response by 25%, and user engagement by 30%.",
     tech: ["React", "Node.js", "Firebase", "AWS", "Nginx", "Jenkins"],
-    highlights: ["+30% engagement", "99.9% uptime", "5000+ users"],
+    highlights: ["+30% engagement", "+20% user satisfaction", "5,000+ users"],
     link: "#",
   },
   {
     title: "Ausum Kids",
-    category: "Healthcare Booking",
+    category: "Therapy & Health Booking",
     type: "FULL-STACK",
     color: "#8fa8c8",
     icon: "🏥",
     description:
-      "Therapy booking system connecting children with providers. RESTful API improved response time by 25% for seamless user/provider/admin interaction.",
+      "Therapy booking system connecting children with providers across multi-role dashboards. RESTful APIs improved response time by 25% for 5,000+ users.",
     tech: ["React", "Express", "Firebase", "AWS EC2", "MongoDB"],
-    highlights: ["+25% API speed", "Multi-role system", "Scalable"],
+    highlights: ["+25% API speed", "Multi-role system", "5,000+ users"],
     link: "#",
-  },
-  {
-    title: "Otaku Match",
-    category: "AI Matchmaking",
-    type: "AI PROJECT",
-    color: "#a78bfa",
-    icon: "🤖",
-    description:
-      "AI-powered matchmaking platform for gamers & anime enthusiasts. MongoDB schemas categorize 500+ titles for precise AI-driven compatibility scoring.",
-    tech: ["Next.js", "Node.js", "MongoDB", "AI/ML", "LLM"],
-    highlights: ["500+ titles", "AI scoring", "Niche community"],
-    link: "#",
-  },
-  {
-    title: "Arthaveda Landing Page",
-    category: "SEO + Performance",
-    type: "LIVE SITE",
-    color: "#34d399",
-    icon: "📈",
-    description:
-      "High-performance SPA for Arthaveda Learning & Development. Reduced load time by 30%, mobile-first design, structured metadata for organic traffic growth.",
-    tech: ["Next.js", "React", "AWS", "Vercel", "SEO"],
-    highlights: ["-30% load time", "Mobile-first", "Live in production"],
-    link: "https://www.arthavedalearning.com",
-  },
-  {
-    title: "Notesly",
-    category: "Open Source",
-    type: "OPEN SOURCE",
-    color: "#fb923c",
-    icon: "📚",
-    description:
-      "Open-source platform enabling 10,000+ students to share handwritten PDF notes. GitHub Releases for decentralized storage, +40% contribution growth.",
-    tech: ["Next.js", "React", "TypeScript", "GitHub API"],
-    highlights: ["10,000+ students", "+40% contribs", "SEO optimized"],
-    link: "https://notesly.vercel.app/",
   },
   {
     title: "Parchi",
@@ -94,10 +106,22 @@ const projects = [
     color: "#f472b6",
     icon: "💼",
     description:
-      "Business management application with Firebase integration reducing data retrieval time by 40%, CI/CD automation ensuring 99.9% uptime.",
+      "Business management application with Firebase integration reducing data retrieval time by 40% and AWS CI/CD pipelines ensuring 99.9% uptime.",
     tech: ["React", "Node.js", "Firestore", "Firebase Auth", "AWS"],
     highlights: ["-40% data retrieval", "Auth system", "99.9% uptime"],
     link: "#",
+  },
+  {
+    title: "StudySenpai",
+    category: "Live Coding Clans (EdTech)",
+    type: "LIVE SITE",
+    color: "#38bdf8",
+    icon: "⛩️",
+    description:
+      "Clan-based live coding cohorts platform for Full-Stack, Web3, and Gen AI engineering. Features hands-on live cohorts, zero upfront fees, and blockchain-verified credentials.",
+    tech: ["React.js", "Web3", "Solidity", "Node.js", "Gen AI & RAG", "Tailwind CSS"],
+    highlights: ["Live Cohorts", "Blockchain Credentials", "Live in Production"],
+    link: "https://senpai-study.vercel.app/",
   },
 ];
 
@@ -106,7 +130,6 @@ const filters = [
   "WEB3",
   "FULL-STACK",
   "AI PROJECT",
-  "OPEN SOURCE",
   "LIVE SITE",
 ];
 

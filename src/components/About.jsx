@@ -5,9 +5,11 @@ import Shield from "./Shield";
 
 const certifications = [
   {
-    title: "Blockchain Basics — Uniswap v4",
+    title: "Blockchain Basics — Uniswap v4 Development",
     issuer: "Cyfrin Updraft",
     year: "2025",
+    detail:
+      "Specializing in custom Hook logic, Singleton architecture, and gas-optimized smart contract integration.",
     color: "#4fc3f7",
   },
   {
@@ -17,16 +19,16 @@ const certifications = [
     color: "#c9a84c",
   },
   {
-    title: "JavaScript for Beginners",
-    issuer: "Online",
-    year: "2022",
-    color: "#B22234",
-  },
-  {
     title: "Problem Solving (Intermediate)",
     issuer: "HackerRank",
     year: "2023",
     color: "#8fa8c8",
+  },
+  {
+    title: "JavaScript for Beginners",
+    issuer: "Online",
+    year: "2022",
+    color: "#B22234",
   },
   {
     title: "Version Control with Git",
@@ -37,16 +39,12 @@ const certifications = [
 ];
 
 const traits = [
-  { label: "Adaptability", value: "Biotech → Full-Stack → Web3", icon: "🔄" },
+  { label: "Adaptability", value: "Biotech → Full-Stack → Web3 & AI", icon: "🔄" },
+  { label: "Core Stack", value: "MERN · Next.js · FastAPI · Cloud", icon: "⚡" },
   { label: "Award", value: "Best Employee of the Month", icon: "🏆" },
   { label: "Volunteer", value: "Daan Utsav — 5000+ openings", icon: "🤝" },
   { label: "Languages", value: "English · Hindi · Tamil", icon: "🌐" },
-  { label: "Mission", value: "Build products that create impact", icon: "🎯" },
-  {
-    label: "Status",
-    value: "Open to senior roles & Web3 startups",
-    icon: "📡",
-  },
+  { label: "Education", value: "B.Tech Biotech (Minor in Gene Coding)", icon: "🎓" },
 ];
 
 export default function About() {
@@ -236,6 +234,14 @@ export default function About() {
                     >
                       {cert.issuer} · {cert.year}
                     </div>
+                    {cert.detail && (
+                      <div
+                        className="font-rajdhani text-xs mt-1 leading-snug"
+                        style={{ color: "#a0aec0" }}
+                      >
+                        {cert.detail}
+                      </div>
+                    )}
                   </div>
                   <div
                     className="font-mono-tech text-xs px-2 py-1 rounded"
@@ -258,13 +264,13 @@ export default function About() {
                 className="font-mono-tech text-xs mb-4"
                 style={{ color: "#8fa8c8", letterSpacing: "0.15em" }}
               >
-                CONNECT / FIND ME
+                CONNECT / VERIFIED MISSIONS
               </div>
               <div className="flex flex-wrap gap-3">
                 {[
                   {
                     label: "LinkedIn",
-                    url: "https://www.linkedin.com/in/udhayasuryau",
+                    url: "https://www.linkedin.com/in/udhaya-suryau",
                     color: "#4fc3f7",
                   },
                   {
@@ -273,9 +279,19 @@ export default function About() {
                     color: "#c9a84c",
                   },
                   {
-                    label: "Portfolio",
-                    url: "https://space-themed-portolio.vercel.app/",
-                    color: "#B22234",
+                    label: "Otaku Match",
+                    url: "https://otaku-frontend-2026.vercel.app/",
+                    color: "#a78bfa",
+                  },
+                  {
+                    label: "StudySenpai",
+                    url: "https://senpai-study.vercel.app/",
+                    color: "#38bdf8",
+                  },
+                  {
+                    label: "Bitcoin World",
+                    url: "https://bitcoinworld.co.in/",
+                    color: "#f59e0b",
                   },
                   {
                     label: "Arthaveda",
