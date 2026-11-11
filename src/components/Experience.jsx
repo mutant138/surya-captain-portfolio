@@ -274,6 +274,95 @@ export default function Experience() {
             </div>
           </div>
         </motion.div>
+
+        {/* Dossier Download Callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1.1 }}
+          className="glass-panel rounded-xl p-6 mt-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+          style={{
+            borderLeft: "4px solid #4fc3f7",
+            background:
+              "linear-gradient(135deg, rgba(0,51,102,0.35), rgba(5,16,31,0.85))",
+          }}
+        >
+          <div className="flex items-center gap-4">
+            <div
+              style={{
+                width: 48,
+                height: 48,
+                borderRadius: "50%",
+                background: "rgba(79,195,247,0.15)",
+                border: "1px solid rgba(79,195,247,0.4)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 22,
+                flexShrink: 0,
+              }}
+            >
+              📄
+            </div>
+            <div>
+              <div
+                className="font-mono-tech text-xs mb-0.5"
+                style={{ color: "#4fc3f7", letterSpacing: "0.15em" }}
+              >
+                VERIFIED CAREER RECORD
+              </div>
+              <div
+                className="font-rajdhani font-bold text-base"
+                style={{ color: "#F5F5F5" }}
+              >
+                Looking for the complete resume and detailed project breakdowns?
+              </div>
+              <div
+                className="font-mono-tech text-xs mt-0.5"
+                style={{ color: "#8fa8c8" }}
+              >
+                Udhayasurya_Resume.pdf · Web3, AI, Full-Stack MERN & Next.js
+              </div>
+            </div>
+          </div>
+
+          <motion.a
+            href="/Udhayasurya_Resume.pdf"
+            download="Udhayasurya_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-orbitron font-bold text-xs px-6 py-3.5 rounded flex items-center gap-2 shrink-0"
+            style={{
+              background: "linear-gradient(135deg, #003366, #004a99)",
+              color: "#4fc3f7",
+              border: "1px solid rgba(79,195,247,0.4)",
+              letterSpacing: "0.12em",
+              boxShadow: "0 4px 15px rgba(0,51,102,0.4)",
+            }}
+            whileHover={{
+              scale: 1.05,
+              borderColor: "#4fc3f7",
+              boxShadow: "0 6px 25px rgba(79,195,247,0.35)",
+            }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            DOWNLOAD RESUME
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

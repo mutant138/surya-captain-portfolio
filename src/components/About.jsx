@@ -147,6 +147,55 @@ export default function About() {
                 production-ready code with 99.9% uptime guarantees. Always
                 curious. Always building.
               </p>
+
+              {/* Resume download inside Intel Bio */}
+              <div
+                className="mt-6 pt-4 flex flex-wrap items-center justify-between gap-3"
+                style={{ borderTop: "1px solid rgba(79,195,247,0.15)" }}
+              >
+                <span
+                  className="font-mono-tech text-xs"
+                  style={{ color: "#8fa8c8" }}
+                >
+                  CONFIDENTIAL DOSSIER
+                </span>
+                <motion.a
+                  href="/Udhayasurya_Resume.pdf"
+                  download="Udhayasurya_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-orbitron font-bold text-xs px-4 py-2 rounded inline-flex items-center gap-2"
+                  style={{
+                    background: "rgba(79,195,247,0.12)",
+                    border: "1px solid rgba(79,195,247,0.4)",
+                    color: "#4fc3f7",
+                    letterSpacing: "0.1em",
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    background: "rgba(79,195,247,0.22)",
+                    borderColor: "#4fc3f7",
+                    boxShadow: "0 0 15px rgba(79,195,247,0.3)",
+                  }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  DOWNLOAD DOSSIER (PDF)
+                </motion.a>
+              </div>
             </div>
 
             {/* Trait chips */}
@@ -269,6 +318,12 @@ export default function About() {
               <div className="flex flex-wrap gap-3">
                 {[
                   {
+                    label: "Resume (PDF)",
+                    url: "/Udhayasurya_Resume.pdf",
+                    color: "#ef5350",
+                    isDownload: true,
+                  },
+                  {
                     label: "LinkedIn",
                     url: "https://www.linkedin.com/in/udhaya-suryau",
                     color: "#4fc3f7",
@@ -302,9 +357,10 @@ export default function About() {
                   <motion.a
                     key={link.label}
                     href={link.url}
+                    download={link.isDownload ? "Udhayasurya_Resume.pdf" : undefined}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-orbitron font-bold text-xs px-4 py-2.5 rounded"
+                    className="font-orbitron font-bold text-xs px-4 py-2.5 rounded flex items-center gap-1.5"
                     style={{
                       background: `${link.color}15`,
                       border: `1px solid ${link.color}40`,
@@ -317,7 +373,16 @@ export default function About() {
                     }}
                     whileTap={{ scale: 0.97 }}
                   >
-                    {link.label} ↗
+                    {link.isDownload ? (
+                      <>
+                        <span>📄</span>
+                        {link.label} ⤓
+                      </>
+                    ) : (
+                      <>
+                        {link.label} ↗
+                      </>
+                    )}
                   </motion.a>
                 ))}
               </div>

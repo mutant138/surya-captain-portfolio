@@ -294,8 +294,48 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex flex-wrap gap-8 lg:gap-10"
+              className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8"
             >
+              <motion.a
+                href="/Udhayasurya_Resume.pdf"
+                download="Udhayasurya_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-orbitron font-bold px-7 py-3.5 rounded text-sm flex items-center gap-2.5"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(79,195,247,0.2), rgba(0,51,102,0.85))",
+                  color: "#4fc3f7",
+                  border: "1.5px solid rgba(79,195,247,0.6)",
+                  letterSpacing: "0.12em",
+                  boxShadow:
+                    "0 4px 20px rgba(0,51,102,0.6), 0 0 20px rgba(79,195,247,0.25), inset 0 1px 0 rgba(79,195,247,0.3)",
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  borderColor: "#4fc3f7",
+                  boxShadow:
+                    "0 8px 30px rgba(0,51,102,0.9), 0 0 30px rgba(79,195,247,0.5)",
+                }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                DOWNLOAD RESUME
+              </motion.a>
+
               <motion.a
                 href="#projects"
                 onClick={(e) => {
@@ -371,7 +411,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
-              className="flex flex-wrap gap-3 mt-6"
+              className="flex flex-wrap items-center gap-3 mt-6"
             >
               {[
                 { label: "udhayasurya138@gmail.com", icon: "✉" },
@@ -390,6 +430,27 @@ export default function Hero() {
                   {c.icon} {c.label}
                 </span>
               ))}
+              <motion.a
+                href="/Udhayasurya_Resume.pdf"
+                download="Udhayasurya_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono-tech text-xs px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
+                style={{
+                  background: "rgba(79,195,247,0.1)",
+                  border: "1px solid rgba(79,195,247,0.35)",
+                  color: "#4fc3f7",
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  background: "rgba(79,195,247,0.2)",
+                  borderColor: "#4fc3f7",
+                }}
+                whileTap={{ scale: 0.95 }}
+                title="Download Resume PDF"
+              >
+                <span>📄</span> Resume.pdf ⤓
+              </motion.a>
             </motion.div>
           </div>
 

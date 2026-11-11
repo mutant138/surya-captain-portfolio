@@ -145,25 +145,66 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA */}
-          <motion.a
-            href="mailto:udhayasurya138@gmail.com"
-            className="font-orbitron text-xs font-bold px-5 py-2.5 rounded"
-            style={{
-              background: "linear-gradient(135deg, #B22234, #8b1a1a)",
-              color: "#F5F5F5",
-              border: "1px solid rgba(239,83,80,0.4)",
-              letterSpacing: "0.1em",
-              boxShadow: "0 4px 15px rgba(178,34,52,0.3)",
-            }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 6px 25px rgba(178,34,52,0.5)",
-            }}
-            whileTap={{ scale: 0.97 }}
-          >
-            DEPLOY
-          </motion.a>
+          {/* CTAs */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <motion.a
+              href="/Udhayasurya_Resume.pdf"
+              download="Udhayasurya_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 font-orbitron text-xs font-bold px-3 sm:px-4 py-2 sm:py-2.5 rounded"
+              style={{
+                background: "rgba(0, 51, 102, 0.6)",
+                color: "#4fc3f7",
+                border: "1px solid rgba(79, 195, 247, 0.4)",
+                letterSpacing: "0.1em",
+                boxShadow: "0 2px 12px rgba(0, 51, 102, 0.4)",
+              }}
+              whileHover={{
+                scale: 1.05,
+                background: "rgba(0, 51, 102, 0.9)",
+                borderColor: "#4fc3f7",
+                boxShadow: "0 4px 18px rgba(79, 195, 247, 0.35)",
+              }}
+              whileTap={{ scale: 0.97 }}
+              title="Download Udhayasurya's Resume (PDF)"
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>RESUME</span>
+            </motion.a>
+
+            <motion.a
+              href="mailto:udhayasurya138@gmail.com"
+              className="font-orbitron text-xs font-bold px-3 sm:px-5 py-2 sm:py-2.5 rounded"
+              style={{
+                background: "linear-gradient(135deg, #B22234, #8b1a1a)",
+                color: "#F5F5F5",
+                border: "1px solid rgba(239,83,80,0.4)",
+                letterSpacing: "0.1em",
+                boxShadow: "0 4px 15px rgba(178,34,52,0.3)",
+              }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 6px 25px rgba(178,34,52,0.5)",
+              }}
+              whileTap={{ scale: 0.97 }}
+            >
+              DEPLOY
+            </motion.a>
+          </div>
         </div>
       </div>
     </motion.nav>
